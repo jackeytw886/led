@@ -1,0 +1,33 @@
+{
+  "project_id": "P015",
+  "github_repository_id": 1163072466,
+  "title_en": "LED Matrix Animator",
+  "title_zh": "LED 矩陣動畫編輯器",
+  "category": "tool",
+  "topics": [
+    "led-matrix",
+    "pixel-art"
+  ],
+  "repository_full_name": "jackeytw886/led",
+  "repository_url": "https://github.com/jackeytw886/led",
+  "default_branch": "main",
+  "visibility": "public",
+  "aliases": [],
+  "suggested_name": "tool-led-matrix-animator",
+  "repository_status": "connected",
+  "content_state": "source-present",
+  "lifecycle": "unknown",
+  "pages_enabled": true,
+  "deployment_url": "https://jackeytw886.github.io/led",
+  "event_year": null,
+  "entry_paths": [
+    "index.html"
+  ],
+  "related_project_ids": [],
+  "handoff_path": "HANDOFF.md",
+  "verification_source": "github-tree-and-readme",
+  "verified_at": "2026-10-17T20:41:56+08:00",
+  "source_baseline_sha": "e89078c510ef8888ea5383d7027614167fa670c9",
+  "last_runtime_verified_sha": null,
+  "naming_status": "preserved-for-pages"
+}
