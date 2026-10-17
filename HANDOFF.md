@@ -1,31 +1,33 @@
 # Handoff — P015 LED 矩陣動畫編輯器
 
-- 更新時間：2026-10-17T20:41:56+08:00
-- 更新者：Codex（GitHub 專案整理）
+- 更新時間：2026-10-17T21:10:00+08:00
+- 更新者：Claude（Claude 專案「矩陣燈板專用區」資料移轉）
 - 倉庫：https://github.com/jackeytw886/led
 - 分支：main
 - 整理前基準 SHA：`e89078c510ef8888ea5383d7027614167fa670c9`
-- 核對層級：已讀檔案樹、README 與既有 AI 指引；不是本次功能實測報告。
+- 本次合併基準：Codex 管理整理提交 `a727147`（2026-10-17T20:54+08:00）
+- 核對層級：已讀檔案樹、README、index.html 結構（函式與設定位置）及 Claude 專案的開發紀錄；不是本次功能實測報告。
 
 ## 本次完成
 
-- 登記固定代號、分類、舊名與機器可讀索引。
-- 增加或整合 README、AI 入口、交接、檔案地圖及驗證說明。
-- 原有程式、素材與功能說明保留；保留目前倉庫名稱，維持既有網站入口；分類名稱記錄於 PROJECT.json。
+- Codex（`a727147`）：登記固定代號、分類與機器可讀索引；增加 README 管理索引、AI 入口、交接、檔案地圖及驗證說明。保留目前倉庫名稱與 GitHub Pages 入口。
+- Claude（本提交）：把 Claude 專案累積的資料整理進 docs/——開發沿革與待入庫版本（DEVELOPMENT-NOTES）、設計決策（DECISIONS）、硬體與走線紀錄（HARDWARE）、WebSerial 格式（PROTOCOL）；FILE-MAP 加 index.html 行號索引；AGENTS 加本專案規則；README 加功能概要與文件連結。
+- 原有 index.html 未修改。
 
 ## 已確認的入口
 
-`index.html`
-
-GitHub Pages 已啟用；原有入口：https://jackeytw886.github.io/led。本次未做完整互動測試。
+`index.html`（單檔，約 450 KB／11,008 行）。GitHub Pages 已啟用；原有入口：https://jackeytw886.github.io/led 。本次未做完整互動測試。
 
 ## 限制與待辦
 
-- 本次是管理文件整理，未重新執行遊戲互動、相機辨識、擴充功能或實體硬體驗證。
+- **倉庫版本落後**：index.html 是 2026-02 經 EZPage 部署的版本。2026-04 在 Claude 專案中完成的增強版（文字／圖章浮動預覽、500 個圖章、G／Q 快捷鍵、Z 字型走線選項等）與 Python NiceGUI 移植版都**不在倉庫中**，原檔只存在當時的對話輸出，需由使用者從本機下載檔補上傳。細節見 docs/DEVELOPMENT-NOTES.md。
+- 硬體紀錄來自對話內容，Arduino 端 .ino 原檔未入庫；本次未做實機驗證。
 
 ## 下一步
 
-依 README 的原有操作流程，在實際使用環境驗證入口與核心功能；再補記實測版本與結果。
+1. 找到 2026-04 增強版 HTML（對話中檔名為 `led-matrix-animator-enhanced__13_.html` 一類）取代或並存於 index.html，並跑 DIV／id／JS 解析檢查。
+2. 若保留 Python 版，放到 `python/` 目錄（6 個模組，見 DEVELOPMENT-NOTES），補 requirements 與啟動說明。
+3. 在 Chrome／Edge 實測 WebSerial 傳送與產生的 Arduino 程式，補記實測版本與結果到 docs/VERIFICATION.md。
 
 ## 版本定位
 

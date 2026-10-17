@@ -12,3 +12,14 @@
 - 圖片、模型與大型內嵌資料先參考 docs/FILE-MAP.md；僅讀取本次需要的段落，避免把大型二進位或 base64 整份載入上下文。
 - 密碼與金鑰以環境或平台秘密管理，範例使用虛構個人資料；保留現有倉庫與資料的存取界線。
 - GitHub Pages 已啟用的倉庫，改名或搬動入口前先核對網站、QR code、kiosk 與引用；本次管理整理保留現有部署入口。
+
+## Project Rules — 本專案規則
+
+- 硬體與通訊紀錄分別在 docs/HARDWARE.md、docs/PROTOCOL.md；開發沿革與未入庫版本在 docs/DEVELOPMENT-NOTES.md。
+- index.html 約 450 KB／11,008 行，先看 docs/FILE-MAP.md 的行號索引再按段讀取。
+- 交付維持單檔 HTML（`index.html`），不拆成多檔或引入建置流程；外部程式庫目前只有 Tailwind CDN。
+- 介面文字與提示使用繁體中文。
+- 每次修改 HTML 後檢查：`<div>` 開關數量平衡、無重複 id、全部 `<script>` 可被 JS 解析（Node.js 檢查即可）。
+- 畫布座標（左上原點、列優先）與實體燈號（依起點角落與 S 型走線）必須分開處理：繪圖一律用畫布座標，只在輸出 Arduino 或 WebSerial 時經 `canvasToLedIndex()`／`xyToLedIndex()` 轉換。改動走線邏輯要同步修改「產生 Arduino」「接收端程式」「WebSerial」三處並用實際燈號表核對。
+- 「新增影格」是空白影格，「複製影格」才帶入內容；兩者不可共用同一函式路徑。
+- 設定與動畫存在 localStorage（`led_matrix_config_v3`、`led_matrix_frames_{COLS}x{ROWS}`）；改資料結構時保留舊資料的讀取相容。
